@@ -1,40 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto IoT: Telemetria de Café</title>
-    <style>
-        body { font-family: monospace; background-color: #121212; color: #00ff00; text-align: center; padding: 50px; }
-        .container { border: 1px solid #00ff00; padding: 30px; max-width: 600px; margin: 0 auto; }
-        h1 { text-transform: uppercase; border-bottom: 1px solid #00ff00; padding-bottom: 10px; }
-        p { font-size: 1.1em; line-height: 1.5; text-align: left; }
-        .tech-stack { margin-top: 20px; font-weight: bold; color: #ffeb3b; }
-        .mockup-img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; border: 1px solid #333; }
-        .qr-container { margin-top: 30px; padding: 20px; background: #fff; display: inline-block; }
-    </style>
+    <title>Projeto Café - Landing Page</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Sistema Autônomo de Telemetria</h1>
+    <header>
+        <h1>Projeto Café</h1>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.notion.so/33d685af21ca80598058e89030dce215?source=copy_link" alt="QR Code Notion">
+    </header>
+    
+    <main>
+        <section id="recrutamento">
+            <h2>Recrutamento e Propósito</h2>
+            <h3>Por que este projeto?</h3>
+            <p>Identificamos um desperdício recorrente: café esfriando na garrafa e sendo descartado por falta de comunicação.</p>
+            <ul>
+                <li><strong>Transparência:</strong> Evita que ninguém saiba quando o café foi passado.</li>
+                <li><strong>Notificação em Tempo Real:</strong> Um bot no WhatsApp avisará instantaneamente quando houver café novo.</li>
+                <li><strong>Sustentabilidade:</strong> Redução drástica do desperdício de insumos.</li>
+            </ul>
+        </section>
         
-        <img src="mockup.png" alt="Conceito Visual RAGARRAFA" class="mockup-img">
-
-        <p><strong>Status:</strong> Recrutamento Aberto</p>
-        <p><strong>Descrição:</strong> Desenvolvimento de hardware e firmware para monitoramento de massa em tempo real utilizando ESP32, Célula de Carga HX711 e integração cloud via Firebase RTDB.</p>
-        <p><strong>Vagas Técnicas Abertas:</strong><br>
-        - Engenharia de Hardware (PCB / Fonte)<br>
-        - Engenharia Mecânica (Modelagem 3D)<br>
-        - Engenharia de Firmware (C/C++ FSM)<br>
-        - Backend (Python / WhatsApp API)</p>
-        
-        <p class="tech-stack">[ ESP32 | C++ | Python | Firebase | CAD 3D ]</p>
-        
-        <p><strong>Ação:</strong> Escaneie o código matriz abaixo para acessar o Kanban de tarefas no Notion e atribuir-se a um módulo.</p>
-
-        <div class="qr-container">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.notion.so/33d685af21ca80598058e89030dce215?source=copy_link" alt="QR Code Notion">
-        </div>
-    </div>
+        <section id="visualizacao">
+            <img src="mockup.png" alt="Mockup do Projeto">
+        </section>
+    </main>
 </body>
 </html>
