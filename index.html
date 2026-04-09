@@ -3,29 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Café - Landing Page</title>
+    <title>Recrutamento - Projeto Café</title>
+    <style>
+        :root { 
+            --primary-blue: #3235d9; 
+            --bg-light-blue: #e0f2fe; 
+            --text-dark: #1e1e1e; 
+            --text-gray: #4b5563; 
+            --orange: #f97316;
+            --green: #22c55e;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .banner { background-color: var(--bg-light-blue); width: 100%; max-width: 1100px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; display: grid; grid-template-columns: 1.2fr 1fr; color: var(--text-dark); }
+        .content { padding: 60px; display: flex; flex-direction: column; justify-content: flex-start; }
+        .logo-section { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 1.2em; color: var(--primary-blue); margin-bottom: 30px; }
+        .logo-icon { width: 30px; height: 30px; background-color: var(--primary-blue); border-radius: 50%; }
+        .headline { font-size: 2.8em; font-weight: 800; line-height: 1.1; margin: 0 0 20px 0; }
+        .headline span { color: var(--primary-blue); }
+        .project-description { font-size: 1.05em; color: var(--text-gray); line-height: 1.6; margin-bottom: 20px; }
+        .progress-container { margin-top: 20px; }
+        .progress-label { display: flex; justify-content: space-between; font-size: 0.8em; font-weight: bold; margin-bottom: 5px; }
+        .progress-bar { height: 10px; background: #cbd5e1; border-radius: 5px; overflow: hidden; }
+        .progress-fill { width: 48%; height: 100%; background: var(--green); border-radius: 5px; transition: width 1s; }
+        .image-container { position: relative; background-color: #fff; }
+        .mockup-image { width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 50px; }
+        .footer-ticker { grid-column: 1 / -1; background-color: #fff; border-top: 1px solid #e5e7eb; display: grid; grid-template-columns: 1fr 220px; align-items: stretch; }
+        .ticker-wrapper { height: 90px; overflow: hidden; }
+        .ticker-list { animation: scroll-v 15s infinite cubic-bezier(0.65, 0, 0.35, 1); }
+        .ticker-item { height: 90px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; align-items: center; padding: 0 60px; border-bottom: 1px solid #f3f4f6; }
+        .label { font-size: 0.7em; color: var(--text-gray); text-transform: uppercase; display: block; }
+        .status-badge { color: var(--orange); font-weight: 800; font-size: 0.9em; }
+        .action-area { display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: var(--primary-blue); padding: 15px; gap: 10px; }
+        .btn-apply { color: #fff; text-decoration: none; font-weight: 800; text-align: center; font-size: 1.1em; text-transform: uppercase; }
+        .qr-small { width: 70px; height: 70px; background: #fff; padding: 5px; border-radius: 4px; }
+        @keyframes scroll-v {
+            0%, 18% { transform: translateY(0); }
+            20%, 38% { transform: translateY(-90px); }
+            40%, 58% { transform: translateY(-180px); }
+            60%, 78% { transform: translateY(-270px); }
+            80%, 98% { transform: translateY(-360px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Projeto Café</h1>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.notion.so/33d685af21ca80598058e89030dce215?source=copy_link" alt="QR Code Notion">
-    </header>
-    
-    <main>
-        <section id="recrutamento">
-            <h2>Recrutamento e Propósito</h2>
-            <h3>Por que este projeto?</h3>
-            <p>Identificamos um desperdício recorrente: café esfriando na garrafa e sendo descartado por falta de comunicação.</p>
-            <ul>
-                <li><strong>Transparência:</strong> Evita que ninguém saiba quando o café foi passado.</li>
-                <li><strong>Notificação em Tempo Real:</strong> Um bot no WhatsApp avisará instantaneamente quando houver café novo.</li>
-                <li><strong>Sustentabilidade:</strong> Redução drástica do desperdício de insumos.</li>
-            </ul>
-        </section>
-        
-        <section id="visualizacao">
-            <img src="mockup.png" alt="Mockup do Projeto">
-        </section>
-    </main>
+    <div class="banner">
+        <div class="content">
+            <div class="logo-section"><div class="logo-icon"></div> Projeto Café</div>
+            <h1 class="headline">O fim do <span>café frio</span>.</h1>
+            <div class="project-description">
+                <p>Monitoramos o nível da garrafa através de uma <strong>balança inteligente</strong> integrada a um sistema de <strong>LEDs progressivos</strong> (RGB), que sinalizam visualmente a quantidade disponível.</p>
+                <p>O <strong>Bot de WhatsApp</strong> avisa instantaneamente quando o café foi passado, garantindo que você nunca mais encontre uma garrafa vazia.</p>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Status do Desenvolvimento</span><span>48%</span></div>
+                <div class="progress-bar"><div class="progress-fill"></div></div>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="mockup.png" class="mockup-image" alt="Protótipo Hardware">
+        </div>
+        <div class="footer-ticker">
+            <div class="ticker-wrapper">
+                <div class="ticker-list">
+                    <div class="ticker-item">
+                        <div><span class="label">Hardware</span>Balança + LEDs</div>
+                        <div><span class="label">Squad</span>Tech</div>
+                        <div><span class="label">Status</span>CONCLUÍDO</div>
+                        <div class="status-badge" style="color:var(--green)">100%</div>
+                    </div>
+                    <div class="ticker-item">
+                        <div><span class="label">Enclausuramento</span>Modelagem 3D</div>
+                        <div><span class="label">Squad</span>Produto</div>
+                        <div><span class="label">Status</span>EM ANDAMENTO</div>
+                        <div class="status-badge">20%</div>
+                    </div>
+                    <div class="ticker-item">
+                        <div><span class="label">Software</span>Bot WhatsApp</div>
+                        <div><span class="label">Squad</span>Data</div>
+                        <div><span class="label">Status</span>BACKLOG</div>
+                        <div class="status-badge">10%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="action-area">
+                <a href="https://www.notion.so/33d685af21ca80598058e89030dce215?source=copy_link" target="_blank" class="btn-apply">APPLY NOW</a>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.notion.so/33d685af21ca80598058e89030dce215?source=copy_link" class="qr-small" alt="QR Code">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
