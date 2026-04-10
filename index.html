@@ -28,13 +28,12 @@
         .image-container { position: relative; background-color: #fff; }
         .mockup-image { width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 50px; }
         
-        .footer-ticker { grid-column: 1 / -1; background-color: #fff; border-top: 1px solid #e5e7eb; display: grid; grid-template-columns: 1fr 220px; align-items: stretch; }
+        /* Modificado: align-items de 'stretch' para 'center' para centralizar verticalmente */
+        .footer-ticker { grid-column: 1 / -1; background-color: #fff; border-top: 1px solid #e5e7eb; display: grid; grid-template-columns: 1fr 220px; align-items: center; }
+        
         .ticker-wrapper { height: 90px; overflow: hidden; }
         .ticker-list { animation: scroll-v 15s infinite cubic-bezier(0.65, 0, 0.35, 1); }
-        
-        /* Centralização Aplicada */
-        .ticker-item { height: 90px; display: flex; justify-content: space-evenly; align-items: center; text-align: center; padding: 0 20px; border-bottom: 1px solid #f3f4f6; }
-        
+        .ticker-item { height: 90px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; align-items: center; padding: 0 60px; border-bottom: 1px solid #f3f4f6; }
         .label { font-size: 0.7em; color: var(--text-gray); text-transform: uppercase; display: block; }
         .status-badge { color: var(--orange); font-weight: 800; font-size: 0.9em; }
         .action-area { display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: var(--primary-blue); padding: 15px; gap: 10px; }
@@ -50,16 +49,18 @@
             100% { transform: translateY(0); }
         }
 
-        /* Responsividade (Celular) */
+        /* Regras de Responsividade para Celular */
         @media (max-width: 768px) {
             body { padding: 10px; }
             .banner { grid-template-columns: 1fr; }
-            .content { padding: 30px 20px; }
+            .content { padding: 40px 20px; }
             .headline { font-size: 2.2em; }
             .mockup-image { border-top-left-radius: 0; }
             .footer-ticker { grid-template-columns: 1fr; }
-            .action-area { flex-direction: row; justify-content: space-around; padding: 20px; }
-            .ticker-item { font-size: 0.85em; padding: 0 5px; gap: 5px; }
+            .ticker-item { padding: 0 10px; grid-template-columns: 1.5fr 1fr 1fr; font-size: 0.85em; gap: 5px; }
+            .ticker-item > div:nth-child(3) { display: none; } /* Oculta uma coluna no celular para não espremer o texto */
+            .action-area { flex-direction: row; justify-content: space-evenly; padding: 20px; }
+            .qr-small { display: none; } /* Oculta QR code (usuário já está no celular) */
         }
     </style>
 </head>
